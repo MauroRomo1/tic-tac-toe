@@ -8,14 +8,14 @@ import { resetGameStorage, saveGameToStorage } from "./storage/index.js";
 
 function App() {
   const [board, setBoard] = useState(() => {
-    const boardFromStorage = window.localStorage.getItem("board");
+    const boardFromStorage = localStorage.getItem("board");
     return boardFromStorage
       ? JSON.parse(boardFromStorage)
       : Array(9).fill(null);
   });
 
   const [turn, setTurn] = useState(() => {
-    const turnFromStorage = window.localStorage.getItem("turn");
+    const turnFromStorage = localStorage.getItem("turn");
     return turnFromStorage ?? TURNS.X;
   });
 
